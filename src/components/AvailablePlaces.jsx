@@ -28,13 +28,10 @@ export default function AvailablePlaces({ onSelectPlace }) {
           setAvailablePlaces(sortedPlaces);
           setIsFetching(false);
         });
-      } catch (error) {
-        setError({
-          message:
-            error.message || "Could not fetch places, please try again later.",
-        });
 
+      } catch (error) {
         setIsFetching(false);
+        setError({ message: error.message || "Could not fetch places, please try again later." });
       }
     };
 
